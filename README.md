@@ -1,5 +1,60 @@
-# Construction-of-texture-image-library-based-on-case-analysis-dataset
-Texture image dataset suitable for 3D printing
-All texture grayscale images are collected from the internet and are not original. All image pixels are set to 192 * 192, with grayscale values ranging from 0-255, which can be used for texture height mapping of 3D models, making it convenient for 3D printing testing. This image dataset was used for my academic paper experimental testing, from texture images to 3D models for conversion to 3D printing effect testing, and the results were good.
+# 纹理图像高度映射数据集 (Texture Image Dataset for Height Mapping)
 
-所有纹理灰度图像的原始图像来源于互联网，不是我原创的。所有图像像素经过统一预处理设置为192*192，灰度值范围为0-255，可用于3D模型的纹理高度映射，便于3D打印测试。 该图像数据集用于我的学术论文实验测试，从纹理图像到3D模型的转换到3D打印效果测试，结果良好。
+这是一个用于3D模型纹理高度映射的灰度图像数据集。所有图像都经过预处理，可直接用作置换贴图 (Displacement Map) 或高度图 (Height Map)，尤其适用于3D打印前的模型细节测试。
+
+该数据集作为我硕士论文实验的一部分创建，旨在探索从2D纹理图像到3D实体模型的快速成型与效果验证。
+
+---
+
+## 📖 数据集详情 (Dataset Details)
+
+* **图像来源 (Image Source)**: 所有原始图像均来源于互联网上的公开资源，版权归原作者所有。
+* **图像规格 (Image Specifications)**:
+    * **分辨率 (Resolution)**: `192 x 192` 像素
+    * **色彩模式 (Color Mode)**: 灰度 (Grayscale)
+    * **灰度范围 (Grayscale Range)**: `0 - 255` (其中0代表最低点/黑色，255代表最高点/白色)
+    * **文件格式 (File Format)**: `PNG`
+* **数据集大小 (Dataset Size)**: 共包含396张纹理图像
+
+---
+
+## 🚀 应用与工作流 (Application & Workflow)
+
+本数据集的主要应用是将2D灰度图像转换为3D模型的表面起伏。数值 `0` (黑色) 对应于模型的最低点（或凹陷），数值 `255` (白色) 对应于模型的最高点（或凸起）。
+
+一个典型的工作流程如下：
+1.  **选择图像**: 从数据集中选择一张 `.png` 格式的纹理图像。
+2.  **导入3D软件**: 在 Blender, Rhinoceros, ZBrush, Fusion 360 等3D建模软件中创建一个基础平面或曲面。
+3.  **应用高度图**: 将所选图像作为该表面的“置换(Displacement)”、“凹凸(Bump)”或“高度图(Height Map)”贴图。
+4.  **调整参数**: 根据需要调整置换强度、模型细分等级等参数，以获得理想的3D几何形态。
+5.  **导出与3D打印**: 将生成的3D模型导出为 `.stl` 或 `.obj` 文件，用于后续的3D打印。
+
+## ⚠️ 重要声明与许可 (Disclaimer & License)
+
+### **免责声明 (Disclaimer)**
+
+本数据集中的所有图像均搜集自互联网，其原始版权归各自的创作者所有。本数据集的整理和发布仅出于**学术研究**和**非商业性技术验证**之目的。
+
+使用者应自觉遵守相关法律法规，尊重原作者的版权。**严禁将此数据集中的任何图像用于商业用途**。因使用本数据集而产生的任何版权纠纷，由使用者自行承担。
+
+简单来说，你可以：
+* **共享** — 在任何媒介以任何形式复制、发行本作品。
+* **演绎** — 修改、转换或以本作品为基础进行创作。
+
+只要你遵守以下许可协议条款：
+* **署名 (Attribution)** — 你必须给出适当的署名，并标明是否对作品作了修改。
+* **非商业性使用 (NonCommercial)** — 你不得将本作品用于商业目的。
+* **相同方式共享 (ShareAlike)** — 如果你基于本作品进行创作，你必须采用与本协议相同的许可协议分发你的作品。
+
+---
+
+## 🎓 如何引用 (How to Cite)
+
+如果你在你的研究工作或项目中使用了此数据集，请按论文标准格式引用。
+
+---
+
+## 📬 联系方式 (Contact)
+
+如果你对该项目有任何问题或建议，欢迎通过以下方式联系我：
+* **Email**: hongbosu0814@gmail.com
